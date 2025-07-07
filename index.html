@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nicolás Muñoz - Desarrollador Power Platform y Web Full Stack especializado en tecnologías frontend y automatización.">
+    <meta name="keywords" content="desarrollador, power platform, web development, full stack, javascript, react">
+    <meta name="author" content="Nicolás Muñoz">
+    
+    <title>Nicolás Muñoz | Desarrollador Power Platform & Web Full Stack</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Material Design Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- CABECERA -->
+    <header class="cabecera">
+        <div class="cabecera-content">
+            <div class="profile-section">
+                <div class="avatar-container">
+                    <div class="avatar">
+                        <img src="img/nm_foto.jpg" alt="Foto de Nicolás Muñoz" class="avatar-image">
+                    </div>
+                    <div class="status-indicator"></div>
+                </div>
+                <h1 class="name-title">Nicolás Muñoz</h1>
+            </div>
+            
+            <div class="typing-container">
+                <span class="typing-prefix">$</span>
+                <span id="typed-text" class="typed-text"></span>
+                <span class="cursor">|</span>
+            </div>
+            
+            <div class="header-stats">
+                <div class="stat-item">
+                    <span class="material-icons">code</span>
+                    <span>3+ Años</span>
+                </div>
+                <div class="stat-item">
+                    <span class="material-icons">work</span>
+                    <span>15+ Proyectos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="material-icons">school</span>
+                    <span>ESPE</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- LAYOUT PRINCIPAL -->
+    <main class="main-container">
+        <div class="layout-grid">
+            
+            <!-- MENÚ PRINCIPAL -->
+            <nav class="menu-principal card">
+                <div class="card-header">
+                    <h3>
+                        <span class="material-icons">menu</span>
+                        Navegación
+                    </h3>
+                </div>
+                <div class="menu-content">
+                    <a href="#about" class="menu-item" data-section="about">
+                        <span class="material-icons">person_outline</span>
+                        <span>Sobre Mí</span>
+                        <span class="material-icons arrow">arrow_forward_ios</span>
+                    </a>
+                    <a href="#experience" class="menu-item" data-section="experience">
+                        <span class="material-icons">work_outline</span>
+                        <span>Experiencia</span>
+                        <span class="material-icons arrow">arrow_forward_ios</span>
+                    </a>
+                    <a href="#skills" class="menu-item" data-section="skills">
+                        <span class="material-icons">code</span>
+                        <span>Habilidades</span>
+                        <span class="material-icons arrow">arrow_forward_ios</span>
+                    </a>
+                    <a href="#projects" class="menu-item" data-section="projects">
+                        <span class="material-icons">folder_open</span>
+                        <span>Proyectos</span>
+                        <span class="material-icons arrow">arrow_forward_ios</span>
+                    </a>
+                    <a href="#contact" class="menu-item" data-section="contact">
+                        <span class="material-icons">contact_mail</span>
+                        <span>Contacto</span>
+                        <span class="material-icons arrow">arrow_forward_ios</span>
+                    </a>
+                    <button class="menu-item download-cv" onclick="downloadCV()">
+                        <span class="material-icons">download</span>
+                        <span>Descargar CV</span>
+                        <span class="material-icons arrow">file_download</span>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- CONTENIDO PRINCIPAL -->
+            <section class="contenido-principal card">
+                <div class="card-header">
+                    <h2>
+                        <span class="material-icons">dashboard</span>
+                        Panel Principal
+                    </h2>
+                </div>
+                
+                <div class="content-sections">
+                    <!-- Sobre Mí -->
+                    <div id="about" class="content-section active">
+                        <div class="section-header">
+                            <h3>Sobre Mí</h3>
+                            <div class="section-divider"></div>
+                        </div>
+                        
+                        <div class="about-content">
+                            <p class="intro-text">
+                                Como desarrollador me especializo en tecnologías de frontend para dar solución a 
+                                problemas de usabilidad y experiencia de usuario en páginas web y aplicaciones.
+                            </p>
+                            
+                            <p class="personal-text">
+                                Como persona soy responsable, productivo, atento y dispuesto a trabajar en equipo 
+                                con el fin de favorecer al crecimiento de la empresa.
+                            </p>
+                            
+                            <div class="quick-stats">
+                                <div class="quick-stat">
+                                    <span class="stat-number">5+</span>
+                                    <span class="stat-label">Tecnologías</span>
+                                </div>
+                                <div class="quick-stat">
+                                    <span class="stat-number">15+</span>
+                                    <span class="stat-label">Proyectos</span>
+                                </div>
+                                <div class="quick-stat">
+                                    <span class="stat-number">2</span>
+                                    <span class="stat-label">Empresas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Habilidades -->
+                    <div id="skills" class="content-section">
+                        <div class="section-header">
+                            <h3>Stack Tecnológico</h3>
+                            <div class="section-divider"></div>
+                        </div>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Frontend</h4>
+                                <div class="skill-items">
+                                    <div class="skill-chip">
+                                        <span class="material-icons">javascript</span>
+                                        JavaScript
+                                    </div>
+                                    <div class="skill-chip">
+                                        <span class="material-icons">web</span>
+                                        React.js
+                                    </div>
+                                    <div class="skill-chip">
+                                        <span class="material-icons">html</span>
+                                        HTML5
+                                    </div>
+                                    <div class="skill-chip">
+                                        <span class="material-icons">css</span>
+                                        CSS3
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4>Backend & DB</h4>
+                                <div class="skill-items">
+                                    <div class="skill-chip">
+                                        <span class="material-icons">dns</span>
+                                        Node.js
+                                    </div>
+                                    <div class="skill-chip">
+                                        <span class="material-icons">storage</span>
+                                        PostgreSQL
+                                    </div>
+                                    <div class="skill-chip">
+                                        <span class="material-icons">database</span>
+                                        SQL Server
+                                    </div>
+                                    <div class="skill-chip">
+                                        <span class="material-icons">api</span>
+                                        Express.js
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4>Microsoft Stack</h4>
+                                <div class="skill-items">
+                                    <div class="skill-chip">
+                                        <span class="material-icons">power</span>
+                                        Power Platform
+                                    </div>
+                                    <div class="skill-chip">
+                                        <span class="material-icons">cloud</span>
+                                        Azure
+                                    </div>
+                                    <div class="skill-chip">
+                                        <span class="material-icons">business</span>
+                                        Microsoft 365
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experiencia -->
+                    <div id="experience" class="content-section">
+                        <div class="section-header">
+                            <h3>Experiencia Profesional</h3>
+                            <div class="section-divider"></div>
+                        </div>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <h4>Yellow IT Consulting</h4>
+                                        <span class="timeline-date">Jun 2024 - Presente</span>
+                                    </div>
+                                    <p class="timeline-role">Desarrollador Power Platform & Soporte Técnico</p>
+                                    <ul class="timeline-tasks">
+                                        <li>Desarrollo de automatización en Power Platform y Microsoft 365</li>
+                                        <li>Administración de usuarios y plataformas Microsoft</li>
+                                        <li>Consultoría en Microsoft Azure y Power Platform</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-header">
+                                        <h4>Lateral Business Thinking</h4>
+                                        <span class="timeline-date">Mar 2025 - Abr 2025</span>
+                                    </div>
+                                    <p class="timeline-role">Desarrollador de Software IA</p>
+                                    <ul class="timeline-tasks">
+                                        <li>Desarrollo de soluciones de inteligencia artificial</li>
+                                        <li>Implementación de algoritmos de machine learning</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NOTICIAS -->
+            <aside class="noticias card">
+                <div class="card-header">
+                    <h3>
+                        <span class="material-icons">notifications</span>
+                        Actualizaciones
+                    </h3>
+                </div>
+                
+                <div class="noticias-content">
+                    <article class="noticia-item">
+                        <div class="noticia-icon">
+                            <span class="material-icons">verified</span>
+                        </div>
+                        <div class="noticia-content-text">
+                            <h4>MS-900 Certified</h4>
+                            <p>Certificación Microsoft 365 Fundamentals obtenida</p>
+                            <time>2025</time>
+                        </div>
+                    </article>
+                    
+                    <article class="noticia-item">
+                        <div class="noticia-icon">
+                            <span class="material-icons">school</span>
+                        </div>
+                        <div class="noticia-content-text">
+                            <h4>Diplomado Ciberseguridad</h4>
+                            <p>Cursando en Universidad de las Américas</p>
+                            <time>En curso</time>
+                        </div>
+                    </article>
+                    
+                    <article class="noticia-item">
+                        <div class="noticia-icon">
+                            <span class="material-icons">analytics</span>
+                        </div>
+                        <div class="noticia-content-text">
+                            <h4>Power BI Specialist</h4>
+                            <p>Especialización en tablas dinámicas y macros avanzadas</p>
+                            <time>2025</time>
+                        </div>
+                    </article>
+                    
+                    <article class="noticia-item">
+                        <div class="noticia-icon">
+                            <span class="material-icons">engineering</span>
+                        </div>
+                        <div class="noticia-content-text">
+                            <h4>Ingeniería TI</h4>
+                            <p>Universidad de las Fuerzas Armadas ESPE</p>
+                            <time>2022-2025</time>
+                        </div>
+                    </article>
+                </div>
+            </aside>
+        </div>
+
+        <!-- PROMOCIONES DEL MES -->
+        <section class="promociones">
+            <div class="promociones-container">
+                <div class="promocion-item card">
+                    <div class="promocion-header">
+                        <span class="material-icons">rocket_launch</span>
+                        <h3>Proyectos Destacados</h3>
+                    </div>
+                    <div class="promocion-content">
+                        <div class="proyecto-item">
+                            <h4>🛒 E-Commerce Full Stack</h4>
+                            <p>Desarrollo completo con Material UI, carrito funcional y API integrada</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Material UI</span>
+                                <span class="tech-tag">API REST</span>
+                            </div>
+                        </div>
+                        
+                        <div class="proyecto-item">
+                            <h4>🌤️ Weather App</h4>
+                            <p>Aplicación del clima con geolocalización y API pública</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">Geolocation API</span>
+                            </div>
+                        </div>
+                        
+                        <div class="proyecto-item">
+                            <h4>⚡ Pokédex React</h4>
+                            <p>App con consultas dinámicas a API REST y filtros avanzados</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Redux</span>
+                                <span class="tech-tag">React Router</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="promocion-item card">
+                    <div class="promocion-header">
+                        <span class="material-icons">build</span>
+                        <h3>Servicios Disponibles</h3>
+                    </div>
+                    <div class="promocion-content">
+                        <div class="servicio-item">
+                            <div class="servicio-icon">
+                                <span class="material-icons">web</span>
+                            </div>
+                            <div class="servicio-info">
+                                <h4>Desarrollo Web Frontend</h4>
+                                <p>React.js, JavaScript ES6+, CSS3, HTML5</p>
+                            </div>
+                        </div>
+                        
+                        <div class="servicio-item">
+                            <div class="servicio-icon">
+                                <span class="material-icons">automation</span>
+                            </div>
+                            <div class="servicio-info">
+                                <h4>Automatización Power Platform</h4>
+                                <p>Power Automate, Power Apps, Power BI</p>
+                            </div>
+                        </div>
+                        
+                        <div class="servicio-item">
+                            <div class="servicio-icon">
+                                <span class="material-icons">support_agent</span>
+                            </div>
+                            <div class="servicio-info">
+                                <h4>Consultoría Microsoft</h4>
+                                <p>Azure, Microsoft 365, SharePoint</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-pagina">
+        <div class="footer-content">
+            <div class="footer-section contact-info">
+                <h3>
+                    <span class="material-icons">contact_mail</span>
+                    Información de Contacto
+                </h3>
+                
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span class="material-icons">email</span>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:jonimates2000@gmail.com">jonimates2000@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="material-icons">phone</span>
+                        <div class="contact-details">
+                            <h4>Teléfono</h4>
+                            <a href="tel:+593992844325">+593 99 284 4325</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="material-icons">location_on</span>
+                        <div class="contact-details">
+                            <h4>Ubicación</h4>
+                            <span>Quito, Ecuador</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="material-icons">school</span>
+                        <div class="contact-details">
+                            <h4>Universidad</h4>
+                            <span>Universidad de las Fuerzas Armadas ESPE</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/nicol%C3%A1s-mu%C3%B1oz-pwitec/" target="_blank" class="social-link linkedin">
+                        <span class="material-icons">work</span>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/Nicodemus00MG" target="_blank" class="social-link github">
+                        <span class="material-icons">code</span>
+                        GitHub
+                    </a>
+                    <a href="mailto:jonimates2000@gmail.com" class="social-link email">
+                        <span class="material-icons">email</span>
+                        Email
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Nicolás Muñoz - Desarrollador Power Platform & Web Full Stack</p>
+            <p class="footer-tech">Construido con ❤️ usando HTML5, CSS3 y JavaScript ES6+</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
