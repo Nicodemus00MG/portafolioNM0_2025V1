@@ -9,7 +9,7 @@
 // CONFIGURATION & CONSTANTS
 // ====================================
 const CONFIG = {
-  typingSpeed: 40,
+  typingSpeed: 90,
   deletingSpeed: 40,
   pauseTime: 2000,
   scrollOffset: 100,
@@ -20,8 +20,9 @@ const CONFIG = {
 const TYPING_TEXTS = [
   "Desarrollador Power Platform & Web Full Stack",
   "Especialista en React.js y JavaScript ES6+", 
-  "Consultor Microsoft Azure y M365",
-  "Automatización de procesos empresariales y transformación digital",
+  "Consultor Microsoft Power Platform",
+  "Automatización de procesos empresariales ",
+  "Especialista en transformación digital empresarial",
   "Experiencia de usuario y frontend moderno",
   "Ingeniero en TI "
 ];

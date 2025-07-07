@@ -303,15 +303,15 @@ body {
   padding: var(--spacing-lg) var(--spacing-xl);
   border-radius: var(--radius-medium);
   font-family: var(--font-mono);
-  font-size: 1.3rem;
-  margin: var(--spacing-xl) 0;
+  font-size: 1.4rem;
+  margin: var(--spacing-x2) 0;
   border: 1px solid var(--primary-purple);
   box-shadow: var(--shadow-purple);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-sm);
-  min-height: 60px;
+  min-height: 70px;
   max-width: 100%;
   width: auto;
 }
