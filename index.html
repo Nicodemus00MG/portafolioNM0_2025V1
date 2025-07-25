@@ -220,6 +220,125 @@
                         </div>
                     </div>
 
+                    <!-- Proyectos -->
+                    <div id="projects" class="content-section">
+                        <div class="section-header">
+                            <h3>Proyectos Power Platform</h3>
+                            <div class="section-divider"></div>
+                        </div>
+                        
+                        <div class="projects-carousel">
+                            <!-- Proyecto 1: Anulación de Facturas -->
+                            <div class="project-slide active">
+                                <div class="project-content">
+                                    <div class="project-info">
+                                        <h4>🧾 Sistema de Anulación de Facturas</h4>
+                                        <p class="project-description">
+                                            App de automatización contable que gestiona el proceso completo de anulación de facturas. 
+                                            Integrada con SharePoint para almacenamiento de documentos, Power BI para análisis de datos 
+                                            y Power Automate para RPA de implementación automática.
+                                        </p>
+                                        <div class="project-features">
+                                            <span class="feature-tag">Power Apps</span>
+                                            <span class="feature-tag">Power Automate</span>
+                                            <span class="feature-tag">SharePoint</span>
+                                            <span class="feature-tag">Power BI</span>
+                                            <span class="feature-tag">RPA</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-gallery">
+                                        <div class="gallery-container">
+                                            <img src="img/papps1.jpeg" alt="Anulación de Facturas - Vista Principal" class="project-image active">
+                                            <img src="img/papps2.jpeg" alt="Anulación de Facturas - Proceso" class="project-image">
+                                        </div>
+                                        <div class="gallery-nav">
+                                            <button class="gallery-btn prev" onclick="changeGalleryImage(0, -1)">‹</button>
+                                            <button class="gallery-btn next" onclick="changeGalleryImage(0, 1)">›</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Proyecto 2: Sistema de RRHH -->
+                            <div class="project-slide">
+                                <div class="project-content">
+                                    <div class="project-info">
+                                        <h4>👥 Solución de Vacaciones y RRHH</h4>
+                                        <p class="project-description">
+                                            Sistema integral de recursos humanos que automatiza procesos de solicitud de vacaciones, 
+                                            permisos y gestión de personal. Los usuarios acceden mediante RPAs que sincronizan datos 
+                                            estructurados y no estructurados con flujos de aprobación gerencial.
+                                        </p>
+                                        <div class="project-features">
+                                            <span class="feature-tag">Power Apps</span>
+                                            <span class="feature-tag">Approvals</span>
+                                            <span class="feature-tag">RPA</span>
+                                            <span class="feature-tag">Flujos</span>
+                                            <span class="feature-tag">Formularios</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-gallery">
+                                        <div class="gallery-container">
+                                            <img src="img/papps3.jpeg" alt="Sistema RRHH - Dashboard" class="project-image active">
+                                            <img src="img/papps4.jpeg" alt="Sistema RRHH - Solicitudes" class="project-image">
+                                        </div>
+                                        <div class="gallery-nav">
+                                            <button class="gallery-btn prev" onclick="changeGalleryImage(1, -1)">‹</button>
+                                            <button class="gallery-btn next" onclick="changeGalleryImage(1, 1)">›</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Proyecto 3: Automatización Empresarial -->
+                            <div class="project-slide">
+                                <div class="project-content">
+                                    <div class="project-info">
+                                        <h4>⚡ Plataforma de Automatización Empresarial</h4>
+                                        <p class="project-description">
+                                            Ecosistema completo de automatización que integra múltiples procesos empresariales. 
+                                            Sincronización en tiempo real entre aplicaciones, gestión de datos estructurados, 
+                                            workflows automatizados y dashboards ejecutivos.
+                                        </p>
+                                        <div class="project-features">
+                                            <span class="feature-tag">Power Platform</span>
+                                            <span class="feature-tag">Integración API</span>
+                                            <span class="feature-tag">Workflows</span>
+                                            <span class="feature-tag">Dashboards</span>
+                                            <span class="feature-tag">Sync Real-time</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-gallery">
+                                        <div class="gallery-container">
+                                            <img src="img/papps5.jpeg" alt="Automatización - Overview" class="project-image active">
+                                            <img src="img/papps6.jpeg" alt="Automatización - Workflows" class="project-image">
+                                        </div>
+                                        <div class="gallery-nav">
+                                            <button class="gallery-btn prev" onclick="changeGalleryImage(2, -1)">‹</button>
+                                            <button class="gallery-btn next" onclick="changeGalleryImage(2, 1)">›</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Navegación del Carousel -->
+                            <div class="carousel-nav">
+                                <button class="carousel-btn active" onclick="changeSlide(0)">
+                                    <span class="btn-icon">🧾</span>
+                                    <span class="btn-text">Facturas</span>
+                                </button>
+                                <button class="carousel-btn" onclick="changeSlide(1)">
+                                    <span class="btn-icon">👥</span>
+                                    <span class="btn-text">RRHH</span>
+                                </button>
+                                <button class="carousel-btn" onclick="changeSlide(2)">
+                                    <span class="btn-icon">⚡</span>
+                                    <span class="btn-text">Automatización</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Experiencia -->
                     <div id="experience" class="content-section">
                         <div class="section-header">
@@ -257,6 +376,70 @@
                                         <li>Implementación de algoritmos de machine learning</li>
                                     </ul>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contacto -->
+                    <div id="contact" class="content-section">
+                        <div class="section-header">
+                            <h3>Contacto Directo</h3>
+                            <div class="section-divider"></div>
+                        </div>
+                        
+                        <div class="contact-direct">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <span class="material-icons">email</span>
+                                </div>
+                                <div class="contact-info-text">
+                                    <h4>Email Profesional</h4>
+                                    <a href="mailto:jonimates2000@gmail.com" class="contact-link">
+                                        jonimates2000@gmail.com
+                                    </a>
+                                    <p>Respuesta en 24 horas</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <span class="material-icons">phone</span>
+                                </div>
+                                <div class="contact-info-text">
+                                    <h4>Teléfono / WhatsApp</h4>
+                                    <a href="tel:+593992844325" class="contact-link">
+                                        +593 99 284 4325
+                                    </a>
+                                    <p>Disponible L-V 9:00-18:00 (GMT-5)</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <span class="material-icons">work</span>
+                                </div>
+                                <div class="contact-info-text">
+                                    <h4>LinkedIn Profesional</h4>
+                                    <a href="https://www.linkedin.com/in/nicol%C3%A1s-mu%C3%B1oz-pwitec/" target="_blank" class="contact-link">
+                                        LinkedIn Profile
+                                    </a>
+                                    <p>Red profesional y portafolio</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cta-section">
+                            <h4>¿Listo para automatizar tu empresa?</h4>
+                            <p>Especialista en Power Platform con experiencia comprobada en automatización de procesos empresariales.</p>
+                            <div class="cta-buttons">
+                                <a href="mailto:jonimates2000@gmail.com?subject=Consulta%20Power%20Platform" class="cta-btn primary">
+                                    <span class="material-icons">send</span>
+                                    Enviar Email
+                                </a>
+                                <a href="https://wa.me/593992844325?text=Hola%20Nicolás,%20me%20interesa%20conocer%20sobre%20tus%20servicios%20de%20Power%20Platform" target="_blank" class="cta-btn secondary">
+                                    <span class="material-icons">chat</span>
+                                    WhatsApp
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -325,37 +508,37 @@
             <div class="promociones-container">
                 <div class="promocion-item card">
                     <div class="promocion-header">
-                        <span class="material-icons">rocket_launch</span>
-                        <h3>Proyectos Destacados</h3>
+                        <span class="material-icons">star</span>
+                        <h3>Casos de Éxito Destacados</h3>
                     </div>
                     <div class="promocion-content">
                         <div class="proyecto-item">
-                            <h4>🛒 E-Commerce Full Stack</h4>
-                            <p>Desarrollo completo con Material UI, carrito funcional y API integrada</p>
+                            <h4>💼 Automatización Contable Completa</h4>
+                            <p>Reducción del 80% en tiempo de procesamiento de facturas mediante RPA y Power Platform</p>
                             <div class="tech-tags">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">Material UI</span>
-                                <span class="tech-tag">API REST</span>
+                                <span class="tech-tag">Power Apps</span>
+                                <span class="tech-tag">SharePoint</span>
+                                <span class="tech-tag">Power BI</span>
                             </div>
                         </div>
                         
                         <div class="proyecto-item">
-                            <h4>🌤️ Weather App</h4>
-                            <p>Aplicación del clima con geolocalización y API pública</p>
+                            <h4>👥 Transformación Digital RRHH</h4>
+                            <p>Sistema integral que automatizó procesos de 500+ empleados con approvals gerenciales</p>
                             <div class="tech-tags">
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">CSS3</span>
-                                <span class="tech-tag">Geolocation API</span>
+                                <span class="tech-tag">Power Automate</span>
+                                <span class="tech-tag">Approvals</span>
+                                <span class="tech-tag">Forms</span>
                             </div>
                         </div>
                         
                         <div class="proyecto-item">
-                            <h4>⚡ Pokédex React</h4>
-                            <p>App con consultas dinámicas a API REST y filtros avanzados</p>
+                            <h4>⚡ Ecosistema Empresarial Integrado</h4>
+                            <p>Plataforma unificada que conecta todos los procesos empresariales en tiempo real</p>
                             <div class="tech-tags">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">Redux</span>
-                                <span class="tech-tag">React Router</span>
+                                <span class="tech-tag">Power Platform</span>
+                                <span class="tech-tag">API Integration</span>
+                                <span class="tech-tag">Real-time Sync</span>
                             </div>
                         </div>
                     </div>
@@ -363,37 +546,47 @@
                 
                 <div class="promocion-item card">
                     <div class="promocion-header">
-                        <span class="material-icons">build</span>
-                        <h3>Servicios Disponibles</h3>
+                        <span class="material-icons">engineering</span>
+                        <h3>Servicios Especializados</h3>
                     </div>
                     <div class="promocion-content">
                         <div class="servicio-item">
                             <div class="servicio-icon">
-                                <span class="material-icons">web</span>
+                                <span class="material-icons">apps</span>
                             </div>
                             <div class="servicio-info">
-                                <h4>Desarrollo Web Frontend</h4>
-                                <p>React.js, JavaScript ES6+, CSS3, HTML5</p>
+                                <h4>Desarrollo Power Apps</h4>
+                                <p>Aplicaciones empresariales personalizadas con UI/UX optimizada</p>
                             </div>
                         </div>
                         
                         <div class="servicio-item">
                             <div class="servicio-icon">
-                                <span class="material-icons">automation</span>
+                                <span class="material-icons">autorenew</span>
                             </div>
                             <div class="servicio-info">
-                                <h4>Automatización Power Platform</h4>
-                                <p>Power Automate, Power Apps, Power BI</p>
+                                <h4>Automatización Power Automate</h4>
+                                <p>Flujos de trabajo inteligentes y RPA para procesos complejos</p>
                             </div>
                         </div>
                         
                         <div class="servicio-item">
                             <div class="servicio-icon">
-                                <span class="material-icons">support_agent</span>
+                                <span class="material-icons">analytics</span>
                             </div>
                             <div class="servicio-info">
-                                <h4>Consultoría Microsoft</h4>
-                                <p>Azure, Microsoft 365, SharePoint</p>
+                                <h4>Business Intelligence</h4>
+                                <p>Dashboards ejecutivos y análisis de datos con Power BI</p>
+                            </div>
+                        </div>
+                        
+                        <div class="servicio-item">
+                            <div class="servicio-icon">
+                                <span class="material-icons">cloud</span>
+                            </div>
+                            <div class="servicio-info">
+                                <h4>Consultoría Microsoft 365</h4>
+                                <p>Optimización y migración de ecosistemas empresariales</p>
                             </div>
                         </div>
                     </div>
@@ -407,41 +600,24 @@
         <div class="footer-content">
             <div class="footer-section contact-info">
                 <h3>
-                    <span class="material-icons">contact_mail</span>
-                    Información de Contacto
+                    <span class="material-icons">connect_without_contact</span>
+                    Conectemos y Automaticemos tu Empresa
                 </h3>
                 
-                <div class="contact-grid">
-                    <div class="contact-item">
+                <div class="footer-contact-simple">
+                    <div class="footer-contact-item">
                         <span class="material-icons">email</span>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <a href="mailto:jonimates2000@gmail.com">jonimates2000@gmail.com</a>
-                        </div>
+                        <a href="mailto:jonimates2000@gmail.com">jonimates2000@gmail.com</a>
                     </div>
                     
-                    <div class="contact-item">
+                    <div class="footer-contact-item">
                         <span class="material-icons">phone</span>
-                        <div class="contact-details">
-                            <h4>Teléfono</h4>
-                            <a href="tel:+593992844325">+593 99 284 4325</a>
-                        </div>
+                        <a href="tel:+593992844325">+593 99 284 4325</a>
                     </div>
                     
-                    <div class="contact-item">
+                    <div class="footer-contact-item">
                         <span class="material-icons">location_on</span>
-                        <div class="contact-details">
-                            <h4>Ubicación</h4>
-                            <span>Quito, Ecuador</span>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <span class="material-icons">school</span>
-                        <div class="contact-details">
-                            <h4>Universidad</h4>
-                            <span>Universidad de las Fuerzas Armadas ESPE</span>
-                        </div>
+                        <span>Quito, Ecuador</span>
                     </div>
                 </div>
                 
@@ -454,17 +630,17 @@
                         <span class="material-icons">code</span>
                         GitHub
                     </a>
-                    <a href="mailto:jonimates2000@gmail.com" class="social-link email">
-                        <span class="material-icons">email</span>
-                        Email
+                    <a href="https://wa.me/593992844325?text=Hola%20Nicolás,%20me%20interesa%20conocer%20sobre%20tus%20servicios%20de%20Power%20Platform" target="_blank" class="social-link whatsapp">
+                        <span class="material-icons">chat</span>
+                        WhatsApp
                     </a>
                 </div>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 Nicolás Muñoz - Desarrollador Power Platform & Web Full Stack</p>
-            <p class="footer-tech">Construido con ❤️ usando HTML5, CSS3 y JavaScript ES6+</p>
+            <p>&copy; 2025 Nicolás Muñoz - Especialista Power Platform & Automatización Empresarial</p>
+            <p class="footer-tech">Transformando procesos empresariales con tecnología Microsoft</p>
         </div>
     </footer>
 

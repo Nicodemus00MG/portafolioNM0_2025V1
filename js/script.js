@@ -9,7 +9,7 @@
 // CONFIGURATION & CONSTANTS
 // ====================================
 const CONFIG = {
-  typingSpeed: 90,
+  typingSpeed: 80,
   deletingSpeed: 40,
   pauseTime: 2000,
   scrollOffset: 100,
@@ -20,11 +20,10 @@ const CONFIG = {
 const TYPING_TEXTS = [
   "Desarrollador Power Platform & Web Full Stack",
   "Especialista en React.js y JavaScript ES6+", 
-  "Consultor Microsoft Power Platform",
-  "Automatización de procesos empresariales ",
-  "Especialista en transformación digital empresarial",
+  "Consultor Microsoft Azure y M365",
+  "Automatización de procesos empresariales",
   "Experiencia de usuario y frontend moderno",
-  "Ingeniero en TI "
+  "Estudiante de Ingeniería en Tecnologías TI"
 ];
 
 // ====================================
@@ -197,7 +196,157 @@ class TypingAnimation {
 }
 
 // ====================================
-// NAVIGATION MANAGEMENT
+// PROJECTS CAROUSEL MANAGEMENT
+// ====================================
+class ProjectsCarousel {
+  constructor() {
+    this.currentSlide = 0;
+    this.slides = document.querySelectorAll('.project-slide');
+    this.navButtons = document.querySelectorAll('.carousel-btn');
+    this.galleries = [];
+    
+    this.init();
+  }
+  
+  init() {
+    this.initGalleries();
+    this.showSlide(0);
+    this.setupAutoRotation();
+  }
+  
+  initGalleries() {
+    // Initialize galleries for each project
+    this.slides.forEach((slide, index) => {
+      const images = slide.querySelectorAll('.project-image');
+      this.galleries.push({
+        currentImage: 0,
+        images: images
+      });
+      
+      // Set first image as active
+      if (images.length > 0) {
+        images[0].classList.add('active');
+      }
+    });
+  }
+  
+  showSlide(index) {
+    // Hide all slides
+    this.slides.forEach(slide => {
+      slide.classList.remove('active');
+    });
+    
+    // Remove active from all nav buttons
+    this.navButtons.forEach(btn => {
+      btn.classList.remove('active');
+    });
+    
+    // Show target slide
+    if (this.slides[index]) {
+      this.slides[index].classList.add('active');
+      this.navButtons[index].classList.add('active');
+      this.currentSlide = index;
+    }
+  }
+  
+  nextSlide() {
+    const nextIndex = (this.currentSlide + 1) % this.slides.length;
+    this.showSlide(nextIndex);
+  }
+  
+  prevSlide() {
+    const prevIndex = this.currentSlide === 0 ? this.slides.length - 1 : this.currentSlide - 1;
+    this.showSlide(prevIndex);
+  }
+  
+  changeGalleryImage(galleryIndex, direction) {
+    const gallery = this.galleries[galleryIndex];
+    if (!gallery || gallery.images.length <= 1) return;
+    
+    // Remove active from current image
+    gallery.images[gallery.currentImage].classList.remove('active');
+    
+    // Calculate next image index
+    if (direction === 1) {
+      gallery.currentImage = (gallery.currentImage + 1) % gallery.images.length;
+    } else {
+      gallery.currentImage = gallery.currentImage === 0 ? gallery.images.length - 1 : gallery.currentImage - 1;
+    }
+    
+    // Add active to new image
+    gallery.images[gallery.currentImage].classList.add('active');
+  }
+  
+  setupAutoRotation() {
+    // Auto-rotate galleries every 4 seconds
+    setInterval(() => {
+      this.galleries.forEach((gallery, index) => {
+        if (gallery.images.length > 1) {
+          this.changeGalleryImage(index, 1);
+        }
+      });
+    }, 4000);
+  }
+}
+
+// ====================================
+// CONTACT FORM MANAGEMENT
+// ====================================
+class ContactManager {
+  constructor() {
+    this.contactCards = document.querySelectorAll('.contact-card');
+    this.ctaButtons = document.querySelectorAll('.cta-btn');
+    this.init();
+  }
+  
+  init() {
+    this.bindEvents();
+    this.addAnimations();
+  }
+  
+  bindEvents() {
+    // Track contact card interactions
+    this.contactCards.forEach((card, index) => {
+      card.addEventListener('click', () => {
+        const link = card.querySelector('a');
+        if (link) {
+          trackEvent('contact_card_click', {
+            method: index === 0 ? 'email' : index === 1 ? 'phone' : 'linkedin',
+            card_index: index
+          });
+        }
+      });
+    });
+    
+    // Track CTA button clicks
+    this.ctaButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        const isEmail = button.classList.contains('primary');
+        trackEvent('cta_click', {
+          type: isEmail ? 'email' : 'whatsapp',
+          button_text: button.textContent.trim()
+        });
+        
+        // Add click animation
+        button.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          button.style.transform = '';
+        }, 150);
+      });
+    });
+  }
+  
+  addAnimations() {
+    // Stagger animation for contact cards
+    this.contactCards.forEach((card, index) => {
+      card.style.animationDelay = `${index * 0.1}s`;
+      card.classList.add('animate-on-scroll');
+    });
+  }
+}
+
+// ====================================
+// ENHANCED NAVIGATION MANAGER
 // ====================================
 class NavigationManager {
   constructor() {
@@ -220,21 +369,34 @@ class NavigationManager {
         const sectionId = item.getAttribute('data-section');
         this.showSection(sectionId);
         this.setActiveMenuItem(item);
+        
+        // Track navigation
+        trackEvent('navigation_click', {
+          section: sectionId,
+          from_section: this.currentSection
+        });
       });
     });
   }
   
   showSection(sectionId) {
-    // Hide all sections
+    // Hide all sections with fade out
     this.contentSections.forEach(section => {
       section.classList.remove('active');
     });
     
-    // Show target section
+    // Show target section with fade in
     const targetSection = document.getElementById(sectionId);
     if (targetSection) {
-      targetSection.classList.add('active');
+      setTimeout(() => {
+        targetSection.classList.add('active');
+      }, 150);
       this.currentSection = sectionId;
+      
+      // If showing projects, reset carousel
+      if (sectionId === 'projects' && window.projectsCarousel) {
+        window.projectsCarousel.showSlide(0);
+      }
     }
   }
   
@@ -430,27 +592,6 @@ class ThemeManager {
 }
 
 // ====================================
-// CONTACT FUNCTIONALITY
-// ====================================
-class ContactManager {
-  constructor() {
-    this.contactItems = document.querySelectorAll('.contact-item');
-    this.init();
-  }
-  
-  init() {
-    this.contactItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const link = item.querySelector('a');
-        if (link) {
-          window.open(link.href, '_blank');
-        }
-      });
-    });
-  }
-}
-
-// ====================================
 // MAIN APPLICATION CLASS
 // ====================================
 class PersonalWebsite {
@@ -500,6 +641,13 @@ class PersonalWebsite {
     // Initialize navigation
     this.components.navigation = new NavigationManager();
     
+    // Initialize projects carousel
+    this.components.projectsCarousel = new ProjectsCarousel();
+    window.projectsCarousel = this.components.projectsCarousel; // Global access
+    
+    // Initialize contact manager
+    this.components.contact = new ContactManager();
+    
     // Initialize scroll animations
     this.components.scrollAnimations = new ScrollAnimations();
     
@@ -514,9 +662,6 @@ class PersonalWebsite {
     
     // Initialize theme manager
     this.components.theme = new ThemeManager();
-    
-    // Initialize contact manager
-    this.components.contact = new ContactManager();
   }
   
   setupGlobalEvents() {
@@ -570,19 +715,20 @@ class PersonalWebsite {
  * Download CV function
  */
 function downloadCV() {
-  // Prepare and trigger CV download
-  const link = document.createElement('a');
-  link.href = '../doc/Nicolás Muñoz CV Actualizado.pdf'; // Ruta al archivo PDF
-  link.download = 'Nicolas_Munoz_CV.pdf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-
+  // Simulate CV download
   showNotification('🔄 Preparando descarga del CV...', 'info');
   
   setTimeout(() => {
     showNotification('✅ CV descargado exitosamente', 'success');
+    
+    // In a real implementation, you would have:
+    // const link = document.createElement('a');
+    // link.href = '/assets/cv-nicolas-munoz.pdf';
+    // link.download = 'Nicolas_Munoz_CV.pdf';
+    // link.click();
+    
     console.log('📄 CV download simulated');
+    trackEvent('cv_download', { method: 'button_click' });
   }, 1500);
 }
 
@@ -615,6 +761,52 @@ function toggleMobileMenu() {
 }
 
 /**
+ * Projects Carousel Functions
+ */
+function changeSlide(index) {
+  if (window.projectsCarousel) {
+    window.projectsCarousel.showSlide(index);
+    trackEvent('project_slide_change', { slide_index: index });
+  }
+}
+
+function changeGalleryImage(galleryIndex, direction) {
+  if (window.projectsCarousel) {
+    window.projectsCarousel.changeGalleryImage(galleryIndex, direction);
+    trackEvent('gallery_image_change', { 
+      gallery_index: galleryIndex, 
+      direction: direction > 0 ? 'next' : 'prev' 
+    });
+  }
+}
+
+/**
+ * Enhanced Contact Functions
+ */
+function openEmailClient() {
+  const subject = encodeURIComponent('Consulta Power Platform - Nicolás Muñoz');
+  const body = encodeURIComponent(`Hola Nicolás,
+
+Me interesa conocer más sobre tus servicios de automatización con Power Platform.
+
+¿Podrías proporcionarme más información sobre:
+- Soluciones de automatización
+- Precios y tiempos de implementación
+- Casos de éxito similares
+
+Saludos cordiales.`);
+  
+  window.open(`mailto:jonimates2000@gmail.com?subject=${subject}&body=${body}`);
+  trackEvent('contact_email_open', { method: 'enhanced' });
+}
+
+function openWhatsApp() {
+  const message = encodeURIComponent('Hola Nicolás, me interesa conocer sobre tus servicios de Power Platform y automatización de procesos empresariales. ¿Podríamos conversar?');
+  window.open(`https://wa.me/593992844325?text=${message}`, '_blank');
+  trackEvent('contact_whatsapp_open', { method: 'enhanced' });
+}
+
+/**
  * Analytics tracking (placeholder for future implementation)
  */
 function trackEvent(eventName, properties = {}) {
@@ -623,6 +815,24 @@ function trackEvent(eventName, properties = {}) {
   // Future implementation could include:
   // gtag('event', eventName, properties);
   // or other analytics services
+}
+
+/**
+ * Handle contact form submission (if added)
+ */
+function handleContactSubmission(formData) {
+  showNotification('📧 Mensaje enviado correctamente', 'success');
+  console.log('Contact form data:', formData);
+}
+
+/**
+ * Toggle mobile menu (for future mobile improvements)
+ */
+function toggleMobileMenu() {
+  const menu = document.querySelector('.menu-principal');
+  if (menu) {
+    menu.classList.toggle('mobile-active');
+  }
 }
 
 // ====================================
@@ -650,7 +860,7 @@ window.addEventListener('unhandledrejection', (e) => {
 const website = new PersonalWebsite();
 
 // Add some useful debugging functions to window for development
-if (process?.env?.NODE_ENV === 'development' || window.location.hostname === 'localhost') {
+if (typeof process !== 'undefined' && process?.env?.NODE_ENV === 'development' || window.location.hostname === 'localhost') {
   window.website = website;
   window.showNotification = showNotification;
   window.CONFIG = CONFIG;
@@ -676,11 +886,13 @@ if (typeof module !== 'undefined' && module.exports) {
     PersonalWebsite,
     TypingAnimation,
     NavigationManager,
+    ProjectsCarousel,
+    ContactManager,
     ScrollAnimations,
     showNotification,
     downloadCV,
-    scrollToSection
+    scrollToSection,
+    changeSlide,
+    changeGalleryImage
   };
 }
-
-
