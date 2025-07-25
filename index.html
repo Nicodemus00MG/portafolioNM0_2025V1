@@ -9,25 +9,51 @@
     
     <title>Nicolás Muñoz | Desarrollador Power Platform & Web Full Stack</title>
     
-    <!-- Google Fonts -->
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/script.js" as="script">
+    <link rel="preload" href="img/nm_foto.jpg" as="image">
+    
+    <!-- Google Fonts - Optimized -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     
     <!-- Material Design Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Performance Optimization -->
+    <style>
+        /* Critical CSS - Inline for faster loading */
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #121212; 
+            color: #ffffff; 
+            margin: 0; 
+            line-height: 1.6; 
+        }
+        .cabecera { 
+            min-height: 400px; 
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #6c5ce7 100%); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        .loading { opacity: 0; transition: opacity 0.3s ease; }
+        .loaded { opacity: 1; }
+    </style>
 </head>
-<body>
+<body class="loading">
     <!-- CABECERA -->
     <header class="cabecera">
         <div class="cabecera-content">
             <div class="profile-section">
                 <div class="avatar-container">
                     <div class="avatar">
-                        <img src="img/nm_foto.jpg" alt="Foto de Nicolás Muñoz" class="avatar-image">
+                        <img src="img/nm_foto.jpg" alt="Foto de Nicolás Muñoz" class="avatar-image" loading="eager">
                     </div>
                     <div class="status-indicator"></div>
                 </div>
@@ -70,7 +96,7 @@
                     </h3>
                 </div>
                 <div class="menu-content">
-                    <a href="#about" class="menu-item" data-section="about">
+                    <a href="#about" class="menu-item active" data-section="about">
                         <span class="material-icons">person_outline</span>
                         <span>Sobre Mí</span>
                         <span class="material-icons arrow">arrow_forward_ios</span>
@@ -248,12 +274,12 @@
                                     </div>
                                     <div class="project-gallery">
                                         <div class="gallery-container">
-                                            <img src="img/papps1.jpeg" alt="Anulación de Facturas - Vista Principal" class="project-image active">
-                                            <img src="img/papps2.jpeg" alt="Anulación de Facturas - Proceso" class="project-image">
+                                            <img src="img/papps1.jpeg" alt="Anulación de Facturas - Vista Principal" class="project-image active" loading="lazy">
+                                            <img src="img/papps2.jpeg" alt="Anulación de Facturas - Proceso" class="project-image" loading="lazy">
                                         </div>
                                         <div class="gallery-nav">
-                                            <button class="gallery-btn prev" onclick="changeGalleryImage(0, -1)">‹</button>
-                                            <button class="gallery-btn next" onclick="changeGalleryImage(0, 1)">›</button>
+                                            <button class="gallery-btn prev" onclick="changeGalleryImage(0, -1)" aria-label="Imagen anterior">‹</button>
+                                            <button class="gallery-btn next" onclick="changeGalleryImage(0, 1)" aria-label="Siguiente imagen">›</button>
                                         </div>
                                     </div>
                                 </div>
@@ -279,12 +305,12 @@
                                     </div>
                                     <div class="project-gallery">
                                         <div class="gallery-container">
-                                            <img src="img/papps3.jpeg" alt="Sistema RRHH - Dashboard" class="project-image active">
-                                            <img src="img/papps4.jpeg" alt="Sistema RRHH - Solicitudes" class="project-image">
+                                            <img src="img/papps3.jpeg" alt="Sistema RRHH - Dashboard" class="project-image active" loading="lazy">
+                                            <img src="img/papps4.jpeg" alt="Sistema RRHH - Solicitudes" class="project-image" loading="lazy">
                                         </div>
                                         <div class="gallery-nav">
-                                            <button class="gallery-btn prev" onclick="changeGalleryImage(1, -1)">‹</button>
-                                            <button class="gallery-btn next" onclick="changeGalleryImage(1, 1)">›</button>
+                                            <button class="gallery-btn prev" onclick="changeGalleryImage(1, -1)" aria-label="Imagen anterior">‹</button>
+                                            <button class="gallery-btn next" onclick="changeGalleryImage(1, 1)" aria-label="Siguiente imagen">›</button>
                                         </div>
                                     </div>
                                 </div>
@@ -310,12 +336,12 @@
                                     </div>
                                     <div class="project-gallery">
                                         <div class="gallery-container">
-                                            <img src="img/papps5.jpeg" alt="Automatización - Overview" class="project-image active">
-                                            <img src="img/papps6.jpeg" alt="Automatización - Workflows" class="project-image">
+                                            <img src="img/papps5.jpeg" alt="Automatización - Overview" class="project-image active" loading="lazy">
+                                            <img src="img/papps6.jpeg" alt="Automatización - Workflows" class="project-image" loading="lazy">
                                         </div>
                                         <div class="gallery-nav">
-                                            <button class="gallery-btn prev" onclick="changeGalleryImage(2, -1)">‹</button>
-                                            <button class="gallery-btn next" onclick="changeGalleryImage(2, 1)">›</button>
+                                            <button class="gallery-btn prev" onclick="changeGalleryImage(2, -1)" aria-label="Imagen anterior">‹</button>
+                                            <button class="gallery-btn next" onclick="changeGalleryImage(2, 1)" aria-label="Siguiente imagen">›</button>
                                         </div>
                                     </div>
                                 </div>
@@ -644,7 +670,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
+    <!-- JavaScript - Deferred for better performance -->
+    <script defer src="js/script.js"></script>
 </body>
 </html>
