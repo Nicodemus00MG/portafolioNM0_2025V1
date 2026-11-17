@@ -1,676 +1,707 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nicolás Muñoz - Desarrollador Power Platform y Web Full Stack especializado en tecnologías frontend y automatización.">
-    <meta name="keywords" content="desarrollador, power platform, web development, full stack, javascript, react">
-    <meta name="author" content="Nicolás Muñoz">
-    
-    <title>Nicolás Muñoz | Desarrollador Power Platform & Web Full Stack</title>
-    
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="css/styles.css" as="style">
-    <link rel="preload" href="js/script.js" as="script">
-    <link rel="preload" href="img/nm_foto.jpg" as="image">
-    
-    <!-- Google Fonts - Optimized -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Material Design Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    
-    <!-- Performance Optimization -->
-    <style>
-        /* Critical CSS - Inline for faster loading */
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background: #121212; 
-            color: #ffffff; 
-            margin: 0; 
-            line-height: 1.6; 
-        }
-        .cabecera { 
-            min-height: 400px; 
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #6c5ce7 100%); 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-        }
-        .loading { opacity: 0; transition: opacity 0.3s ease; }
-        .loaded { opacity: 1; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicolás Muñoz | Soluciones Microsoft e IA · Power Platform · RPA</title>
+  <meta name="description" content="Portafolio de Josué Nicolás Muñoz Gualotuña: desarrollador de soluciones Microsoft e inteligencia artificial con Power Platform, Copilot Studio, Power BI y RPA. Fundador de KillaCode Labs. Quito, Ecuador.">
+  <meta name="keywords" content="Power Platform, Power Apps, Power Automate, Power BI, Copilot Studio, RPA, Inteligencia Artificial, Microsoft 365, SharePoint, Azure, Quito, Ecuador">
+  <meta name="author" content="Josué Nicolás Muñoz Gualotuña">
+  <meta name="theme-color" content="#0b0c10">
+  <link rel="canonical" href="https://portafolio2027.netlify.app/">
+
+  <!-- Open Graph / redes -->
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="es_EC">
+  <meta property="og:title" content="Nicolás Muñoz · Soluciones Microsoft e IA">
+  <meta property="og:description" content="Power Platform, Copilot Studio, Power BI y RPA para automatizar procesos y tomar mejores decisiones con datos.">
+  <meta property="og:url" content="https://portafolio2027.netlify.app/">
+  <meta property="og:image" content="https://portafolio2027.netlify.app/img/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/nm_foto.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Aplica el tema guardado antes de pintar (evita parpadeo) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('nm-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { /* sin almacenamiento: se queda en oscuro */ }
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Josué Nicolás Muñoz Gualotuña",
+    "alternateName": "Nicolás Muñoz",
+    "jobTitle": "Desarrollador de Soluciones Microsoft e IA",
+    "address": { "@type": "PostalAddress", "addressLocality": "Quito", "addressCountry": "EC" },
+    "alumniOf": "Universidad de las Fuerzas Armadas ESPE",
+    "url": "https://portafolio2027.netlify.app/",
+    "sameAs": [
+      "https://www.linkedin.com/in/nicol%C3%A1s-mu%C3%B1oz-pwitec/",
+      "https://github.com/Nicodemus00MG"
+    ]
+  }
+  </script>
 </head>
-<body class="loading">
-    <!-- CABECERA -->
-    <header class="cabecera">
-        <div class="cabecera-content">
-            <div class="profile-section">
-                <div class="avatar-container">
-                    <div class="avatar">
-                        <img src="img/nm_foto.jpg" alt="Foto de Nicolás Muñoz" class="avatar-image" loading="eager">
-                    </div>
-                    <div class="status-indicator"></div>
-                </div>
-                <h1 class="name-title">Nicolás Muñoz</h1>
-            </div>
-            
-            <div class="typing-container">
-                <span class="typing-prefix">$</span>
-                <span id="typed-text" class="typed-text"></span>
-                <span class="cursor">|</span>
-            </div>
-            
-            <div class="header-stats">
-                <div class="stat-item">
-                    <span class="material-icons">code</span>
-                    <span>3+ Años</span>
-                </div>
-                <div class="stat-item">
-                    <span class="material-icons">work</span>
-                    <span>15+ Proyectos</span>
-                </div>
-                <div class="stat-item">
-                    <span class="material-icons">school</span>
-                    <span>ESPE</span>
-                </div>
-            </div>
-        </div>
-    </header>
+<body>
+  <!-- ============ ICONOS (sprite SVG) ============ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <defs>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><path d="M22 10v6"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></symbol>
+      <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></symbol>
+      <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+      <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+      <symbol id="i-apps" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></symbol>
+      <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+      <symbol id="i-expand" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></symbol>
+      <symbol id="i-brief" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+      <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></symbol>
+    </defs>
+  </svg>
 
-    <!-- LAYOUT PRINCIPAL -->
-    <main class="main-container">
-        <div class="layout-grid">
-            
-            <!-- MENÚ PRINCIPAL -->
-            <nav class="menu-principal card">
-                <div class="card-header">
-                    <h3>
-                        <span class="material-icons">menu</span>
-                        Navegación
-                    </h3>
-                </div>
-                <div class="menu-content">
-                    <a href="#about" class="menu-item active" data-section="about">
-                        <span class="material-icons">person_outline</span>
-                        <span>Sobre Mí</span>
-                        <span class="material-icons arrow">arrow_forward_ios</span>
-                    </a>
-                    <a href="#experience" class="menu-item" data-section="experience">
-                        <span class="material-icons">work_outline</span>
-                        <span>Experiencia</span>
-                        <span class="material-icons arrow">arrow_forward_ios</span>
-                    </a>
-                    <a href="#skills" class="menu-item" data-section="skills">
-                        <span class="material-icons">code</span>
-                        <span>Habilidades</span>
-                        <span class="material-icons arrow">arrow_forward_ios</span>
-                    </a>
-                    <a href="#projects" class="menu-item" data-section="projects">
-                        <span class="material-icons">folder_open</span>
-                        <span>Proyectos</span>
-                        <span class="material-icons arrow">arrow_forward_ios</span>
-                    </a>
-                    <a href="#contact" class="menu-item" data-section="contact">
-                        <span class="material-icons">contact_mail</span>
-                        <span>Contacto</span>
-                        <span class="material-icons arrow">arrow_forward_ios</span>
-                    </a>
-                    <button class="menu-item download-cv" onclick="downloadCV()">
-                        <span class="material-icons">download</span>
-                        <span>Descargar CV</span>
-                        <span class="material-icons arrow">file_download</span>
-                    </button>
-                </div>
-            </nav>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
 
-            <!-- CONTENIDO PRINCIPAL -->
-            <section class="contenido-principal card">
-                <div class="card-header">
-                    <h2>
-                        <span class="material-icons">dashboard</span>
-                        Panel Principal
-                    </h2>
-                </div>
-                
-                <div class="content-sections">
-                    <!-- Sobre Mí -->
-                    <div id="about" class="content-section active">
-                        <div class="section-header">
-                            <h3>Sobre Mí</h3>
-                            <div class="section-divider"></div>
-                        </div>
-                        
-                        <div class="about-content">
-                            <p class="intro-text">
-                                Como desarrollador me especializo en tecnologías de frontend para dar solución a 
-                                problemas de usabilidad y experiencia de usuario en páginas web y aplicaciones.
-                            </p>
-                            
-                            <p class="personal-text">
-                                Como persona soy responsable, productivo, atento y dispuesto a trabajar en equipo 
-                                con el fin de favorecer al crecimiento de la empresa.
-                            </p>
-                            
-                            <div class="quick-stats">
-                                <div class="quick-stat">
-                                    <span class="stat-number">5+</span>
-                                    <span class="stat-label">Tecnologías</span>
-                                </div>
-                                <div class="quick-stat">
-                                    <span class="stat-number">15+</span>
-                                    <span class="stat-label">Proyectos</span>
-                                </div>
-                                <div class="quick-stat">
-                                    <span class="stat-number">2</span>
-                                    <span class="stat-label">Empresas</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <!-- ============ NAVEGACIÓN ============ -->
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Principal">
+      <a href="#inicio" class="brand" aria-label="Nicolás Muñoz, inicio">
+        <span class="brand-mark">NM</span>
+        <span class="brand-text">Nicolás Muñoz</span>
+      </a>
 
-                    <!-- Habilidades -->
-                    <div id="skills" class="content-section">
-                        <div class="section-header">
-                            <h3>Stack Tecnológico</h3>
-                            <div class="section-divider"></div>
-                        </div>
-                        
-                        <div class="skills-grid">
-                            <div class="skill-category">
-                                <h4>Frontend</h4>
-                                <div class="skill-items">
-                                    <div class="skill-chip">
-                                        <span class="material-icons">javascript</span>
-                                        JavaScript
-                                    </div>
-                                    <div class="skill-chip">
-                                        <span class="material-icons">web</span>
-                                        React.js
-                                    </div>
-                                    <div class="skill-chip">
-                                        <span class="material-icons">html</span>
-                                        HTML5
-                                    </div>
-                                    <div class="skill-chip">
-                                        <span class="material-icons">css</span>
-                                        CSS3
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-category">
-                                <h4>Backend & DB</h4>
-                                <div class="skill-items">
-                                    <div class="skill-chip">
-                                        <span class="material-icons">dns</span>
-                                        Node.js
-                                    </div>
-                                    <div class="skill-chip">
-                                        <span class="material-icons">storage</span>
-                                        PostgreSQL
-                                    </div>
-                                    <div class="skill-chip">
-                                        <span class="material-icons">database</span>
-                                        SQL Server
-                                    </div>
-                                    <div class="skill-chip">
-                                        <span class="material-icons">api</span>
-                                        Express.js
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="skill-category">
-                                <h4>Microsoft Stack</h4>
-                                <div class="skill-items">
-                                    <div class="skill-chip">
-                                        <span class="material-icons">power</span>
-                                        Power Platform
-                                    </div>
-                                    <div class="skill-chip">
-                                        <span class="material-icons">cloud</span>
-                                        Azure
-                                    </div>
-                                    <div class="skill-chip">
-                                        <span class="material-icons">business</span>
-                                        Microsoft 365
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#formacion">Formación</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li class="nav-cv-mobile"><a href="doc/CV_Nicolas_Munoz_2026.pdf" download="CV_Nicolas_Munoz_2026.pdf">Descargar CV</a></li>
+      </ul>
 
-                    <!-- Proyectos -->
-                    <div id="projects" class="content-section">
-                        <div class="section-header">
-                            <h3>Proyectos Power Platform</h3>
-                            <div class="section-divider"></div>
-                        </div>
-                        
-                        <div class="projects-carousel">
-                            <!-- Proyecto 1: Anulación de Facturas -->
-                            <div class="project-slide active">
-                                <div class="project-content">
-                                    <div class="project-info">
-                                        <h4>🧾 Sistema de Anulación de Facturas</h4>
-                                        <p class="project-description">
-                                            App de automatización contable que gestiona el proceso completo de anulación de facturas. 
-                                            Integrada con SharePoint para almacenamiento de documentos, Power BI para análisis de datos 
-                                            y Power Automate para RPA de implementación automática.
-                                        </p>
-                                        <div class="project-features">
-                                            <span class="feature-tag">Power Apps</span>
-                                            <span class="feature-tag">Power Automate</span>
-                                            <span class="feature-tag">SharePoint</span>
-                                            <span class="feature-tag">Power BI</span>
-                                            <span class="feature-tag">RPA</span>
-                                        </div>
-                                    </div>
-                                    <div class="project-gallery">
-                                        <div class="gallery-container">
-                                            <img src="img/papps1.jpeg" alt="Anulación de Facturas - Vista Principal" class="project-image active" loading="lazy">
-                                            <img src="img/papps2.jpeg" alt="Anulación de Facturas - Proceso" class="project-image" loading="lazy">
-                                        </div>
-                                        <div class="gallery-nav">
-                                            <button class="gallery-btn prev" onclick="changeGalleryImage(0, -1)" aria-label="Imagen anterior">‹</button>
-                                            <button class="gallery-btn next" onclick="changeGalleryImage(0, 1)" aria-label="Siguiente imagen">›</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Cambiar tema claro/oscuro">
+          <svg class="ico ico-sun"><use href="#i-sun"/></svg>
+          <svg class="ico ico-moon"><use href="#i-moon"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm nav-cv" href="doc/CV_Nicolas_Munoz_2026.pdf" download="CV_Nicolas_Munoz_2026.pdf">
+          <svg class="ico"><use href="#i-download"/></svg> CV 2026
+        </a>
+        <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+          <svg class="ico ico-open"><use href="#i-menu"/></svg>
+          <svg class="ico ico-close"><use href="#i-x"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-                            <!-- Proyecto 2: Sistema de RRHH -->
-                            <div class="project-slide">
-                                <div class="project-content">
-                                    <div class="project-info">
-                                        <h4>👥 Solución de Vacaciones y RRHH</h4>
-                                        <p class="project-description">
-                                            Sistema integral de recursos humanos que automatiza procesos de solicitud de vacaciones, 
-                                            permisos y gestión de personal. Los usuarios acceden mediante RPAs que sincronizan datos 
-                                            estructurados y no estructurados con flujos de aprobación gerencial.
-                                        </p>
-                                        <div class="project-features">
-                                            <span class="feature-tag">Power Apps</span>
-                                            <span class="feature-tag">Approvals</span>
-                                            <span class="feature-tag">RPA</span>
-                                            <span class="feature-tag">Flujos</span>
-                                            <span class="feature-tag">Formularios</span>
-                                        </div>
-                                    </div>
-                                    <div class="project-gallery">
-                                        <div class="gallery-container">
-                                            <img src="img/papps3.jpeg" alt="Sistema RRHH - Dashboard" class="project-image active" loading="lazy">
-                                            <img src="img/papps4.jpeg" alt="Sistema RRHH - Solicitudes" class="project-image" loading="lazy">
-                                        </div>
-                                        <div class="gallery-nav">
-                                            <button class="gallery-btn prev" onclick="changeGalleryImage(1, -1)" aria-label="Imagen anterior">‹</button>
-                                            <button class="gallery-btn next" onclick="changeGalleryImage(1, 1)" aria-label="Siguiente imagen">›</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal"><span class="dot"></span> Quito, Ecuador · Soluciones Microsoft e IA</p>
+          <h1 class="hero-title reveal">
+            Nicolás Muñoz
+            <span class="hero-role">Desarrollador de soluciones <em>Microsoft</em> e <em>inteligencia artificial</em></span>
+          </h1>
+          <p class="hero-lead reveal">
+            Diseño e implemento apps, automatizaciones y agentes de IA con Power Platform, Copilot Studio y RPA
+            para empresas de salud, consultoría y servicios. Fundador de <strong>KillaCode Labs</strong>, consultora Microsoft Partner.
+          </p>
 
-                            <!-- Proyecto 3: Automatización Empresarial -->
-                            <div class="project-slide">
-                                <div class="project-content">
-                                    <div class="project-info">
-                                        <h4>⚡ Plataforma de Automatización Empresarial</h4>
-                                        <p class="project-description">
-                                            Ecosistema completo de automatización que integra múltiples procesos empresariales. 
-                                            Sincronización en tiempo real entre aplicaciones, gestión de datos estructurados, 
-                                            workflows automatizados y dashboards ejecutivos.
-                                        </p>
-                                        <div class="project-features">
-                                            <span class="feature-tag">Power Platform</span>
-                                            <span class="feature-tag">Integración API</span>
-                                            <span class="feature-tag">Workflows</span>
-                                            <span class="feature-tag">Dashboards</span>
-                                            <span class="feature-tag">Sync Real-time</span>
-                                        </div>
-                                    </div>
-                                    <div class="project-gallery">
-                                        <div class="gallery-container">
-                                            <img src="img/papps5.jpeg" alt="Automatización - Overview" class="project-image active" loading="lazy">
-                                            <img src="img/papps6.jpeg" alt="Automatización - Workflows" class="project-image" loading="lazy">
-                                        </div>
-                                        <div class="gallery-nav">
-                                            <button class="gallery-btn prev" onclick="changeGalleryImage(2, -1)" aria-label="Imagen anterior">‹</button>
-                                            <button class="gallery-btn next" onclick="changeGalleryImage(2, 1)" aria-label="Siguiente imagen">›</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+          <div class="terminal reveal" aria-label="Tecnologías principales">
+            <span class="prompt">~/nicolas $</span>
+            <span class="typed" id="typed" aria-live="off">Power Apps</span><span class="caret" aria-hidden="true"></span>
+          </div>
 
-                            <!-- Navegación del Carousel -->
-                            <div class="carousel-nav">
-                                <button class="carousel-btn active" onclick="changeSlide(0)">
-                                    <span class="btn-icon">🧾</span>
-                                    <span class="btn-text">Facturas</span>
-                                </button>
-                                <button class="carousel-btn" onclick="changeSlide(1)">
-                                    <span class="btn-icon">👥</span>
-                                    <span class="btn-text">RRHH</span>
-                                </button>
-                                <button class="carousel-btn" onclick="changeSlide(2)">
-                                    <span class="btn-icon">⚡</span>
-                                    <span class="btn-text">Automatización</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+          <div class="hero-cta reveal">
+            <a class="btn btn-primary" href="doc/CV_Nicolas_Munoz_2026.pdf" download="CV_Nicolas_Munoz_2026.pdf">
+              <svg class="ico"><use href="#i-download"/></svg> Descargar CV
+            </a>
+            <a class="btn btn-ghost" href="#proyectos">
+              Ver proyectos <svg class="ico"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
 
-                    <!-- Experiencia -->
-                    <div id="experience" class="content-section">
-                        <div class="section-header">
-                            <h3>Experiencia Profesional</h3>
-                            <div class="section-divider"></div>
-                        </div>
-                        
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-marker"></div>
-                                <div class="timeline-content">
-                                    <div class="timeline-header">
-                                        <h4>Yellow IT Consulting</h4>
-                                        <span class="timeline-date">Jun 2024 - Presente</span>
-                                    </div>
-                                    <p class="timeline-role">Desarrollador Power Platform & Soporte Técnico</p>
-                                    <ul class="timeline-tasks">
-                                        <li>Desarrollo de automatización en Power Platform y Microsoft 365</li>
-                                        <li>Administración de usuarios y plataformas Microsoft</li>
-                                        <li>Consultoría en Microsoft Azure y Power Platform</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="timeline-item">
-                                <div class="timeline-marker"></div>
-                                <div class="timeline-content">
-                                    <div class="timeline-header">
-                                        <h4>Lateral Business Thinking</h4>
-                                        <span class="timeline-date">Mar 2025 - Abr 2025</span>
-                                    </div>
-                                    <p class="timeline-role">Desarrollador de Software IA</p>
-                                    <ul class="timeline-tasks">
-                                        <li>Desarrollo de soluciones de inteligencia artificial</li>
-                                        <li>Implementación de algoritmos de machine learning</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Contacto -->
-                    <div id="contact" class="content-section">
-                        <div class="section-header">
-                            <h3>Contacto Directo</h3>
-                            <div class="section-divider"></div>
-                        </div>
-                        
-                        <div class="contact-direct">
-                            <div class="contact-card">
-                                <div class="contact-icon">
-                                    <span class="material-icons">email</span>
-                                </div>
-                                <div class="contact-info-text">
-                                    <h4>Email Profesional</h4>
-                                    <a href="mailto:jonimates2000@gmail.com" class="contact-link">
-                                        jonimates2000@gmail.com
-                                    </a>
-                                    <p>Respuesta en 24 horas</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-card">
-                                <div class="contact-icon">
-                                    <span class="material-icons">phone</span>
-                                </div>
-                                <div class="contact-info-text">
-                                    <h4>Teléfono / WhatsApp</h4>
-                                    <a href="tel:+593992844325" class="contact-link">
-                                        +593 99 284 4325
-                                    </a>
-                                    <p>Disponible L-V 9:00-18:00 (GMT-5)</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-card">
-                                <div class="contact-icon">
-                                    <span class="material-icons">work</span>
-                                </div>
-                                <div class="contact-info-text">
-                                    <h4>LinkedIn Profesional</h4>
-                                    <a href="https://www.linkedin.com/in/nicol%C3%A1s-mu%C3%B1oz-pwitec/" target="_blank" class="contact-link">
-                                        LinkedIn Profile
-                                    </a>
-                                    <p>Red profesional y portafolio</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="cta-section">
-                            <h4>¿Listo para automatizar tu empresa?</h4>
-                            <p>Especialista en Power Platform con experiencia comprobada en automatización de procesos empresariales.</p>
-                            <div class="cta-buttons">
-                                <a href="mailto:jonimates2000@gmail.com?subject=Consulta%20Power%20Platform" class="cta-btn primary">
-                                    <span class="material-icons">send</span>
-                                    Enviar Email
-                                </a>
-                                <a href="https://wa.me/593992844325?text=Hola%20Nicolás,%20me%20interesa%20conocer%20sobre%20tus%20servicios%20de%20Power%20Platform" target="_blank" class="cta-btn secondary">
-                                    <span class="material-icons">chat</span>
-                                    WhatsApp
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- NOTICIAS -->
-            <aside class="noticias card">
-                <div class="card-header">
-                    <h3>
-                        <span class="material-icons">notifications</span>
-                        Actualizaciones
-                    </h3>
-                </div>
-                
-                <div class="noticias-content">
-                    <article class="noticia-item">
-                        <div class="noticia-icon">
-                            <span class="material-icons">verified</span>
-                        </div>
-                        <div class="noticia-content-text">
-                            <h4>MS-900 Certified</h4>
-                            <p>Certificación Microsoft 365 Fundamentals obtenida</p>
-                            <time>2025</time>
-                        </div>
-                    </article>
-                    
-                    <article class="noticia-item">
-                        <div class="noticia-icon">
-                            <span class="material-icons">school</span>
-                        </div>
-                        <div class="noticia-content-text">
-                            <h4>Diplomado Ciberseguridad</h4>
-                            <p>Cursando en Universidad de las Américas</p>
-                            <time>En curso</time>
-                        </div>
-                    </article>
-                    
-                    <article class="noticia-item">
-                        <div class="noticia-icon">
-                            <span class="material-icons">analytics</span>
-                        </div>
-                        <div class="noticia-content-text">
-                            <h4>Power BI Specialist</h4>
-                            <p>Especialización en tablas dinámicas y macros avanzadas</p>
-                            <time>2025</time>
-                        </div>
-                    </article>
-                    
-                    <article class="noticia-item">
-                        <div class="noticia-icon">
-                            <span class="material-icons">engineering</span>
-                        </div>
-                        <div class="noticia-content-text">
-                            <h4>Ingeniería TI</h4>
-                            <p>Universidad de las Fuerzas Armadas ESPE</p>
-                            <time>2022-2025</time>
-                        </div>
-                    </article>
-                </div>
-            </aside>
+          <ul class="social reveal" aria-label="Redes y contacto">
+            <li><a href="https://www.linkedin.com/in/nicol%C3%A1s-mu%C3%B1oz-pwitec/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ico"><use href="#i-linkedin"/></svg></a></li>
+            <li><a href="https://github.com/Nicodemus00MG" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ico"><use href="#i-github"/></svg></a></li>
+            <li><a href="mailto:jonimates2000@gmail.com" aria-label="Correo electrónico"><svg class="ico"><use href="#i-mail"/></svg></a></li>
+            <li><a href="https://wa.me/593992844325?text=Hola%20Nicol%C3%A1s%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar." target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico"><use href="#i-chat"/></svg></a></li>
+          </ul>
         </div>
 
-        <!-- PROMOCIONES DEL MES -->
-        <section class="promociones">
-            <div class="promociones-container">
-                <div class="promocion-item card">
-                    <div class="promocion-header">
-                        <span class="material-icons">star</span>
-                        <h3>Casos de Éxito Destacados</h3>
-                    </div>
-                    <div class="promocion-content">
-                        <div class="proyecto-item">
-                            <h4>💼 Automatización Contable Completa</h4>
-                            <p>Reducción del 80% en tiempo de procesamiento de facturas mediante RPA y Power Platform</p>
-                            <div class="tech-tags">
-                                <span class="tech-tag">Power Apps</span>
-                                <span class="tech-tag">SharePoint</span>
-                                <span class="tech-tag">Power BI</span>
-                            </div>
-                        </div>
-                        
-                        <div class="proyecto-item">
-                            <h4>👥 Transformación Digital RRHH</h4>
-                            <p>Sistema integral que automatizó procesos de 500+ empleados con approvals gerenciales</p>
-                            <div class="tech-tags">
-                                <span class="tech-tag">Power Automate</span>
-                                <span class="tech-tag">Approvals</span>
-                                <span class="tech-tag">Forms</span>
-                            </div>
-                        </div>
-                        
-                        <div class="proyecto-item">
-                            <h4>⚡ Ecosistema Empresarial Integrado</h4>
-                            <p>Plataforma unificada que conecta todos los procesos empresariales en tiempo real</p>
-                            <div class="tech-tags">
-                                <span class="tech-tag">Power Platform</span>
-                                <span class="tech-tag">API Integration</span>
-                                <span class="tech-tag">Real-time Sync</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="promocion-item card">
-                    <div class="promocion-header">
-                        <span class="material-icons">engineering</span>
-                        <h3>Servicios Especializados</h3>
-                    </div>
-                    <div class="promocion-content">
-                        <div class="servicio-item">
-                            <div class="servicio-icon">
-                                <span class="material-icons">apps</span>
-                            </div>
-                            <div class="servicio-info">
-                                <h4>Desarrollo Power Apps</h4>
-                                <p>Aplicaciones empresariales personalizadas con UI/UX optimizada</p>
-                            </div>
-                        </div>
-                        
-                        <div class="servicio-item">
-                            <div class="servicio-icon">
-                                <span class="material-icons">autorenew</span>
-                            </div>
-                            <div class="servicio-info">
-                                <h4>Automatización Power Automate</h4>
-                                <p>Flujos de trabajo inteligentes y RPA para procesos complejos</p>
-                            </div>
-                        </div>
-                        
-                        <div class="servicio-item">
-                            <div class="servicio-icon">
-                                <span class="material-icons">analytics</span>
-                            </div>
-                            <div class="servicio-info">
-                                <h4>Business Intelligence</h4>
-                                <p>Dashboards ejecutivos y análisis de datos con Power BI</p>
-                            </div>
-                        </div>
-                        
-                        <div class="servicio-item">
-                            <div class="servicio-icon">
-                                <span class="material-icons">cloud</span>
-                            </div>
-                            <div class="servicio-info">
-                                <h4>Consultoría Microsoft 365</h4>
-                                <p>Optimización y migración de ecosistemas empresariales</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- PIE DE PÁGINA -->
-    <footer class="pie-pagina">
-        <div class="footer-content">
-            <div class="footer-section contact-info">
-                <h3>
-                    <span class="material-icons">connect_without_contact</span>
-                    Conectemos y Automaticemos tu Empresa
-                </h3>
-                
-                <div class="footer-contact-simple">
-                    <div class="footer-contact-item">
-                        <span class="material-icons">email</span>
-                        <a href="mailto:jonimates2000@gmail.com">jonimates2000@gmail.com</a>
-                    </div>
-                    
-                    <div class="footer-contact-item">
-                        <span class="material-icons">phone</span>
-                        <a href="tel:+593992844325">+593 99 284 4325</a>
-                    </div>
-                    
-                    <div class="footer-contact-item">
-                        <span class="material-icons">location_on</span>
-                        <span>Quito, Ecuador</span>
-                    </div>
-                </div>
-                
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/nicol%C3%A1s-mu%C3%B1oz-pwitec/" target="_blank" class="social-link linkedin">
-                        <span class="material-icons">work</span>
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com/Nicodemus00MG" target="_blank" class="social-link github">
-                        <span class="material-icons">code</span>
-                        GitHub
-                    </a>
-                    <a href="https://wa.me/593992844325?text=Hola%20Nicolás,%20me%20interesa%20conocer%20sobre%20tus%20servicios%20de%20Power%20Platform" target="_blank" class="social-link whatsapp">
-                        <span class="material-icons">chat</span>
-                        WhatsApp
-                    </a>
-                </div>
-            </div>
+        <div class="hero-visual reveal">
+          <figure class="portrait">
+            <img src="img/nm_foto.jpg" alt="Retrato de Nicolás Muñoz" width="800" height="800" fetchpriority="high">
+          </figure>
+          <div class="float-card fc-1">
+            <svg class="ico"><use href="#i-award"/></svg>
+            <div><strong>Microsoft Partner</strong><span>KillaCode Labs</span></div>
+          </div>
+          <div class="float-card fc-2">
+            <svg class="ico"><use href="#i-bot"/></svg>
+            <div><strong>Agentes de IA</strong><span>Copilot Studio</span></div>
+          </div>
+          <div class="float-card fc-3">
+            <svg class="ico"><use href="#i-flow"/></svg>
+            <div><strong>RPA</strong><span>Power Automate</span></div>
+          </div>
         </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Nicolás Muñoz - Especialista Power Platform & Automatización Empresarial</p>
-            <p class="footer-tech">Transformando procesos empresariales con tecnología Microsoft</p>
-        </div>
-    </footer>
+      </div>
 
-    <!-- JavaScript - Deferred for better performance -->
-    <script defer src="js/script.js"></script>
+      <div class="container">
+        <dl class="stats reveal">
+          <div class="stat"><dt>Años con Power Platform</dt><dd>2<span>+</span></dd></div>
+          <div class="stat"><dt>Empresas y consultoras</dt><dd>7</dd></div>
+          <div class="stat"><dt>Certificaciones y diplomados</dt><dd>7</dd></div>
+          <div class="stat"><dt>Semestre · Ing. TI ESPE</dt><dd>8<span>.º</span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ EMPRESAS ============ -->
+    <section class="marquee-section" aria-label="Empresas con las que he trabajado">
+      <p class="marquee-label">Experiencia en</p>
+      <div class="marquee">
+        <ul class="marquee-track">
+          <li>Medilabor · Grupo DIFARE</li><li>SOLCA Quito</li><li>NexTI Business Solutions</li><li>ILUM Transform</li><li>Yellow IT Consulting</li><li>Lateral Business Thinking</li><li>KillaCode Labs</li>
+        </ul>
+        <ul class="marquee-track" aria-hidden="true">
+          <li>Medilabor · Grupo DIFARE</li><li>SOLCA Quito</li><li>NexTI Business Solutions</li><li>ILUM Transform</li><li>Yellow IT Consulting</li><li>Lateral Business Thinking</li><li>KillaCode Labs</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE MÍ ============ -->
+    <section class="section" id="sobre-mi">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-index">01</span>
+          <h2>Sobre mí</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="about-lead">
+              Soy <strong>Josué Nicolás Muñoz Gualotuña</strong>, desarrollador de soluciones Microsoft e inteligencia artificial.
+            </p>
+            <p>
+              Trabajo con <strong>Power Platform</strong> (Power Apps, Power Automate, Power BI y Copilot Studio), Microsoft 365, SharePoint y Azure,
+              y con <strong>automatización robótica de procesos (RPA)</strong>. He diseñado e implementado soluciones para empresas de salud,
+              consultoría y servicios en gestión comercial, contabilidad, recursos humanos y análisis de datos.
+            </p>
+            <p>
+              También desarrollo aplicaciones web con React y Node.js. Estudio el octavo semestre de Ingeniería en Tecnologías de la Información
+              en la ESPE y tengo un Diplomado en Ciberseguridad (UDLA) y certificaciones de Microsoft y AWS.
+            </p>
+          </div>
+
+          <ul class="about-facts reveal">
+            <li class="fact">
+              <span class="fact-ico"><svg class="ico"><use href="#i-cap"/></svg></span>
+              <div><strong>Ingeniería en TI · ESPE</strong><span>Octavo semestre · graduación prevista 2027</span></div>
+            </li>
+            <li class="fact">
+              <span class="fact-ico"><svg class="ico"><use href="#i-brief"/></svg></span>
+              <div><strong>Fundador y CEO · KillaCode Labs</strong><span>Consultora tecnológica Microsoft Partner</span></div>
+            </li>
+            <li class="fact">
+              <span class="fact-ico"><svg class="ico"><use href="#i-shield"/></svg></span>
+              <div><strong>Diplomado en Ciberseguridad</strong><span>Universidad de las Américas (UDLA)</span></div>
+            </li>
+            <li class="fact">
+              <span class="fact-ico"><svg class="ico"><use href="#i-globe"/></svg></span>
+              <div><strong>Idiomas</strong><span>Español nativo · Inglés B1 (Cambridge)</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="services">
+          <article class="service reveal">
+            <span class="service-ico"><svg class="ico"><use href="#i-apps"/></svg></span>
+            <h3>Apps de negocio</h3>
+            <p>Power Apps y Power Pages conectadas a SharePoint, Dataverse y SQL para digitalizar procesos de punta a punta.</p>
+          </article>
+          <article class="service reveal">
+            <span class="service-ico"><svg class="ico"><use href="#i-flow"/></svg></span>
+            <h3>Automatización y RPA</h3>
+            <p>Flujos de aprobación, generación automática de documentos e integración entre aplicaciones con Power Automate.</p>
+          </article>
+          <article class="service reveal">
+            <span class="service-ico"><svg class="ico"><use href="#i-bot"/></svg></span>
+            <h3>Agentes de IA</h3>
+            <p>Agentes y bots con Copilot Studio y Microsoft Copilot para M365 que atienden, consultan y ejecutan tareas.</p>
+          </article>
+          <article class="service reveal">
+            <span class="service-ico"><svg class="ico"><use href="#i-chart"/></svg></span>
+            <h3>Datos y Power BI</h3>
+            <p>Análisis de datos y reportería para decisiones comerciales, más machine learning con Python y scikit-learn.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCIA ============ -->
+    <section class="section section-alt" id="experiencia">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-index">02</span>
+          <h2>Experiencia profesional</h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="tl-item reveal">
+            <div class="tl-meta"><time>Jun 2026 – Oct 2026</time></div>
+            <div class="tl-card">
+              <h3>Ingeniero de Desarrollo RPA</h3>
+              <p class="tl-company">NexTI Business Solutions</p>
+              <ul>
+                <li>Desarrollo de automatizaciones RPA e integraciones para procesos empresariales de clientes.</li>
+                <li>Soporte, monitoreo y mejora continua de los procesos automatizados en producción.</li>
+              </ul>
+              <div class="tags"><span>RPA</span><span>Integraciones</span><span>Monitoreo</span></div>
+            </div>
+          </li>
+
+          <li class="tl-item reveal">
+            <div class="tl-meta"><time>Dic 2025 – May 2026</time></div>
+            <div class="tl-card">
+              <h3>Arquitecto de Soluciones Power Platform · Analista de Datos</h3>
+              <p class="tl-company">Medilabor S.A. / Grupo DIFARE</p>
+              <ul>
+                <li>Diseño e implementación de soluciones con Power Apps y Power Automate para la gestión comercial.</li>
+                <li>Migraciones y gobierno de SharePoint; flujos de generación automática de documentos.</li>
+                <li>Análisis de datos y reportería en Power BI como soporte a la toma de decisiones comerciales.</li>
+              </ul>
+              <div class="tags"><span>Power Apps</span><span>Power Automate</span><span>SharePoint</span><span>Power BI</span></div>
+            </div>
+          </li>
+
+          <li class="tl-item reveal">
+            <div class="tl-meta"><time>Dic 2025 – Jun 2026</time></div>
+            <div class="tl-card">
+              <h3>Fundador y CEO</h3>
+              <p class="tl-company">KillaCode Labs · consultora Microsoft Partner · remoto</p>
+              <ul>
+                <li>Soluciones de Power Platform, agentes de IA con Copilot Studio y automatización para empresas ecuatorianas.</li>
+                <li>Sitio corporativo en Next.js desplegado en Netlify, con endurecimiento de seguridad (cabeceras HTTP y reCAPTCHA).</li>
+              </ul>
+              <div class="tags"><span>Copilot Studio</span><span>Power Platform</span><span>Next.js</span><span>Netlify</span></div>
+            </div>
+          </li>
+
+          <li class="tl-item reveal">
+            <div class="tl-meta"><time>Dic 2025 – Feb 2026</time></div>
+            <div class="tl-card">
+              <h3>Consultor RPA e IA · Desarrollador de Soluciones de IA</h3>
+              <p class="tl-company">ILUM Transform</p>
+              <ul>
+                <li>Desarrollo de soluciones de inteligencia artificial y automatización de procesos para clientes.</li>
+                <li>Consultoría en Microsoft 365 y Power Platform (Power Apps, Power Automate).</li>
+              </ul>
+              <div class="tags"><span>IA</span><span>RPA</span><span>Microsoft 365</span></div>
+            </div>
+          </li>
+
+          <li class="tl-item reveal">
+            <div class="tl-meta"><time>Nov 2025 – Dic 2025</time></div>
+            <div class="tl-card">
+              <h3>Pasante · Analista de Datos</h3>
+              <p class="tl-company">SOLCA Quito</p>
+              <ul>
+                <li>Desarrollo de soluciones de IA y análisis de datos hospitalarios.</li>
+              </ul>
+              <div class="tags"><span>Análisis de datos</span><span>IA</span><span>Salud</span></div>
+            </div>
+          </li>
+
+          <li class="tl-item reveal">
+            <div class="tl-meta"><time>Mar 2025 – Abr 2025</time></div>
+            <div class="tl-card">
+              <h3>Desarrollador de Software · Soluciones de IA</h3>
+              <p class="tl-company">Lateral Business Thinking</p>
+              <ul>
+                <li>Desarrollo de soluciones de software con inteligencia artificial e implementación de algoritmos de machine learning.</li>
+              </ul>
+              <div class="tags"><span>Machine learning</span><span>Software</span></div>
+            </div>
+          </li>
+
+          <li class="tl-item reveal">
+            <div class="tl-meta"><time>Jun 2024 – May 2025</time></div>
+            <div class="tl-card">
+              <h3>Desarrollador Power Platform · Consultor de Gestión de Servicios TI</h3>
+              <p class="tl-company">Yellow IT Consulting</p>
+              <ul>
+                <li>Desarrollo de automatizaciones con Power Platform y Microsoft 365.</li>
+                <li>Administración de usuarios y plataformas Microsoft; soporte técnico y consultoría en Azure y Power Platform.</li>
+              </ul>
+              <div class="tags"><span>Power Platform</span><span>Azure</span><span>Microsoft 365</span></div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PROYECTOS ============ -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-index">03</span>
+          <h2>Proyectos destacados</h2>
+          <p class="section-sub">Soluciones reales en producción. Haz clic en cualquier captura para verla en grande.</p>
+        </header>
+
+        <!-- MEDILABOR_CASE -->
+
+        <!-- Proyecto: Anulación de facturas -->
+        <article class="case reveal">
+          <div class="case-media">
+            <div class="gallery" data-gallery="facturas">
+              <button class="gallery-main" type="button" aria-label="Ampliar captura">
+                <img src="img/papps1.jpeg" alt="Power App de anulación de facturas: lista de solicitudes contables con estados y panel de administración" loading="lazy" width="1054" height="590">
+                <span class="zoom-hint"><svg class="ico"><use href="#i-expand"/></svg></span>
+              </button>
+              <div class="gallery-thumbs">
+                <button type="button" class="thumb is-active" data-src="img/papps1.jpeg" data-alt="Power App de anulación de facturas: lista de solicitudes contables con estados y panel de administración"><img src="img/papps1.jpeg" alt="" loading="lazy"></button>
+                <button type="button" class="thumb" data-src="img/papps2.jpeg" data-alt="Pantalla de inicio de la app de automatización con menú de nueva solicitud, eliminación y estados"><img src="img/papps2.jpeg" alt="" loading="lazy"></button>
+              </div>
+            </div>
+          </div>
+          <div class="case-body">
+            <p class="case-kicker"><svg class="ico"><use href="#i-file"/></svg> Automatización contable</p>
+            <h3>Sistema de Anulación de Facturas</h3>
+            <p>
+              Aplicación que gestiona el proceso completo de anulación de facturas: registro de la solicitud, validación,
+              estados y adjuntos, con almacenamiento documental en SharePoint, analítica en Power BI y RPA con Power Automate.
+            </p>
+            <ul class="checklist">
+              <li><svg class="ico"><use href="#i-check"/></svg> Flujo de solicitud, revisión y aprobación con trazabilidad por estado</li>
+              <li><svg class="ico"><use href="#i-check"/></svg> Repositorio documental y adjuntos en SharePoint</li>
+              <li><svg class="ico"><use href="#i-check"/></svg> Panel de administración y reportería</li>
+            </ul>
+            <div class="tags"><span>Power Apps</span><span>Power Automate</span><span>SharePoint</span><span>Power BI</span><span>RPA</span></div>
+          </div>
+        </article>
+
+        <!-- Proyecto: Vacaciones y RRHH -->
+        <article class="case case-reverse reveal">
+          <div class="case-media">
+            <div class="gallery" data-gallery="rrhh">
+              <button class="gallery-main" type="button" aria-label="Ampliar captura">
+                <img src="img/papps4.jpeg" alt="Pantalla de aprobaciones de solicitudes de vacaciones para gerencia" loading="lazy" width="949" height="532">
+                <span class="zoom-hint"><svg class="ico"><use href="#i-expand"/></svg></span>
+              </button>
+              <div class="gallery-thumbs">
+                <button type="button" class="thumb is-active" data-src="img/papps4.jpeg" data-alt="Pantalla de aprobaciones de solicitudes de vacaciones para gerencia"><img src="img/papps4.jpeg" alt="" loading="lazy"></button>
+                <button type="button" class="thumb" data-src="img/papps6.jpeg" data-alt="Formulario de nueva solicitud de vacaciones con cálculo de días disponibles"><img src="img/papps6.jpeg" alt="" loading="lazy"></button>
+                <button type="button" class="thumb" data-src="img/papps5.jpeg" data-alt="Formulario para solicitar reposo médico"><img src="img/papps5.jpeg" alt="" loading="lazy"></button>
+                <button type="button" class="thumb" data-src="img/papps7.jpeg" data-alt="Inicio del colaborador con días de vacaciones disponibles y acumulados"><img src="img/papps7.jpeg" alt="" loading="lazy"></button>
+                <button type="button" class="thumb" data-src="img/papps3.jpeg" data-alt="Panel de registro y estado de usuarios"><img src="img/papps3.jpeg" alt="" loading="lazy"></button>
+              </div>
+            </div>
+          </div>
+          <div class="case-body">
+            <p class="case-kicker"><svg class="ico"><use href="#i-brief"/></svg> Recursos humanos</p>
+            <h3>Solución de Vacaciones y RR. HH.</h3>
+            <p>
+              Sistema que automatiza solicitudes de vacaciones, permisos y reposo médico. Sincroniza datos estructurados y no estructurados
+              e incluye flujos de aprobación gerencial por niveles.
+            </p>
+            <ul class="checklist">
+              <li><svg class="ico"><use href="#i-check"/></svg> Cálculo automático de días disponibles y acumulados</li>
+              <li><svg class="ico"><use href="#i-check"/></svg> Aprobaciones por supervisor y gerencia con comentarios</li>
+              <li><svg class="ico"><use href="#i-check"/></svg> Registro y administración de usuarios</li>
+            </ul>
+            <div class="tags"><span>Power Apps</span><span>Power Automate</span><span>Approvals</span><span>RPA</span></div>
+          </div>
+        </article>
+
+        <!-- Proyecto: Agentes IA -->
+        <article class="case reveal">
+          <div class="case-media">
+            <div class="chat-mock" role="img" aria-label="Ilustración de una conversación con un agente de cobranza">
+              <div class="chat-top">
+                <span class="chat-avatar"><svg class="ico"><use href="#i-bot"/></svg></span>
+                <div><strong>CobroBot</strong><span>Agente · Copilot Studio</span></div>
+                <span class="chat-status">en línea</span>
+              </div>
+              <div class="chat-body">
+                <p class="msg bot">Hola 👋 Soy CobroBot. ¿Quieres revisar tus facturas pendientes?</p>
+                <p class="msg user">Sí, ¿cuánto tengo por pagar?</p>
+                <p class="msg bot">Tienes <b>2 facturas</b> pendientes. Te envío el detalle y el enlace de pago por correo.</p>
+                <p class="msg flow"><svg class="ico"><use href="#i-flow"/></svg> Power Automate · correo enviado</p>
+                <p class="msg user">¡Perfecto, gracias!</p>
+              </div>
+              <div class="chat-input"><span>Escribe un mensaje…</span><svg class="ico"><use href="#i-arrow"/></svg></div>
+            </div>
+          </div>
+          <div class="case-body">
+            <p class="case-kicker"><svg class="ico"><use href="#i-spark"/></svg> Inteligencia artificial</p>
+            <h3>Agentes de IA para ventas y cobranza</h3>
+            <p>
+              Agentes conversacionales <strong>VentasBot</strong> y <strong>CobroBot</strong> que automatizan la atención comercial
+              y la gestión de cobros, conectados a flujos de Power Automate para ejecutar acciones reales.
+            </p>
+            <ul class="checklist">
+              <li><svg class="ico"><use href="#i-check"/></svg> Atención comercial y respuesta a consultas frecuentes</li>
+              <li><svg class="ico"><use href="#i-check"/></svg> Recordatorios y gestión de cobros</li>
+              <li><svg class="ico"><use href="#i-check"/></svg> Acciones automatizadas desde la conversación</li>
+            </ul>
+            <div class="tags"><span>Copilot Studio</span><span>Power Automate</span><span>IA generativa</span></div>
+          </div>
+        </article>
+
+        <!-- Otros proyectos -->
+        <h3 class="subhead reveal">Más proyectos</h3>
+        <div class="mini-grid">
+          <article class="mini reveal">
+            <span class="mini-ico"><svg class="ico"><use href="#i-cpu"/></svg></span>
+            <h4>IA y ciencia de datos · ESPE</h4>
+            <p>Minería de datos con CRISP-DM: clustering con K-Means, clasificación con Random Forest y análisis de sentimiento.</p>
+            <div class="tags"><span>Python</span><span>scikit-learn</span><span>CRISP-DM</span></div>
+          </article>
+          <article class="mini reveal">
+            <span class="mini-ico"><svg class="ico"><use href="#i-globe"/></svg></span>
+            <h4>Sitio corporativo KillaCode Labs</h4>
+            <p>Sitio en Next.js desplegado en Netlify con cabeceras de seguridad HTTP y reCAPTCHA.</p>
+            <div class="tags"><span>Next.js</span><span>Netlify</span><span>Seguridad</span></div>
+            <a class="mini-link" href="https://killacode.com" target="_blank" rel="noopener">killacode.com <svg class="ico"><use href="#i-external"/></svg></a>
+          </article>
+          <article class="mini reveal">
+            <span class="mini-ico"><svg class="ico"><use href="#i-cloud"/></svg></span>
+            <h4>Weather App</h4>
+            <p>App del clima con API pública y geolocalización del navegador.</p>
+            <div class="tags"><span>React</span><span>JavaScript</span><span>CSS</span></div>
+            <a class="mini-link" href="https://stalwart-otter-ae70fd.netlify.app" target="_blank" rel="noopener">Ver demo <svg class="ico"><use href="#i-external"/></svg></a>
+          </article>
+          <article class="mini reveal">
+            <span class="mini-ico"><svg class="ico"><use href="#i-cart"/></svg></span>
+            <h4>E-commerce</h4>
+            <p>Tienda web con integración de API y carrito de compras funcional.</p>
+            <div class="tags"><span>JavaScript</span><span>Material UI</span><span>HTML/CSS</span></div>
+            <a class="mini-link" href="https://courageous-otter-2383ae.netlify.app" target="_blank" rel="noopener">Ver demo <svg class="ico"><use href="#i-external"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section class="section section-alt" id="stack">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-index">04</span>
+          <h2>Competencias técnicas</h2>
+        </header>
+
+        <div class="stack-grid">
+          <div class="stack-card reveal">
+            <h3><svg class="ico"><use href="#i-apps"/></svg> Microsoft Power Platform</h3>
+            <ul class="chips"><li>Power Apps</li><li>Power Automate</li><li>Power BI</li><li>Power Pages</li><li>Copilot Studio</li></ul>
+          </div>
+          <div class="stack-card reveal">
+            <h3><svg class="ico"><use href="#i-cloud"/></svg> Microsoft 365 y Azure</h3>
+            <ul class="chips"><li>Microsoft 365</li><li>SharePoint Online</li><li>Migraciones y gobierno</li><li>Teams</li><li>Usuarios y licencias</li><li>Azure</li></ul>
+          </div>
+          <div class="stack-card reveal">
+            <h3><svg class="ico"><use href="#i-spark"/></svg> Inteligencia artificial</h3>
+            <ul class="chips"><li>Agentes con Copilot Studio</li><li>Copilot para M365</li><li>IA generativa</li><li>Machine learning</li><li>Python · scikit-learn</li></ul>
+          </div>
+          <div class="stack-card reveal">
+            <h3><svg class="ico"><use href="#i-flow"/></svg> Automatización (RPA)</h3>
+            <ul class="chips"><li>RPA</li><li>Flujos de aprobación</li><li>Generación de documentos</li><li>Integración entre apps</li></ul>
+          </div>
+          <div class="stack-card reveal">
+            <h3><svg class="ico"><use href="#i-code"/></svg> Desarrollo web</h3>
+            <ul class="chips"><li>React</li><li>Redux</li><li>Next.js</li><li>JavaScript</li><li>HTML · CSS</li><li>Node.js</li><li>Express.js</li><li>React Native</li></ul>
+          </div>
+          <div class="stack-card reveal">
+            <h3><svg class="ico"><use href="#i-db"/></svg> Datos e infraestructura</h3>
+            <ul class="chips"><li>SQL Server</li><li>PostgreSQL</li><li>MySQL</li><li>Análisis y reportería</li><li>Linux</li><li>AWS</li><li>Git · GitHub</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FORMACIÓN ============ -->
+    <section class="section" id="formacion">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-index">05</span>
+          <h2>Formación y certificaciones</h2>
+        </header>
+
+        <div class="edu-grid">
+          <article class="edu reveal">
+            <span class="edu-year">2022 – actualidad</span>
+            <h3>Ingeniería en Tecnologías de la Información</h3>
+            <p>Universidad de las Fuerzas Armadas ESPE · Octavo semestre · Graduación prevista: 2027</p>
+          </article>
+          <article class="edu reveal">
+            <span class="edu-year">2022</span>
+            <h3>Programa Full Stack de Desarrollo Web</h3>
+            <p>Academlo – School of Technology and Computer Science (bootcamp)</p>
+          </article>
+        </div>
+
+        <ul class="certs">
+          <li class="cert reveal">
+            <span class="cert-ico"><svg class="ico"><use href="#i-shield"/></svg></span>
+            <div class="cert-body"><h4>Diplomado en Ciberseguridad</h4><p>Universidad de las Américas (UDLA)</p></div>
+            <div class="cert-meta"><time>Ago 2025</time><span>Credly</span></div>
+          </li>
+          <li class="cert reveal">
+            <span class="cert-ico"><svg class="ico"><use href="#i-spark"/></svg></span>
+            <div class="cert-body"><h4>Level Up CSP Copilot for M365 Technical Champion</h4><p>Microsoft</p></div>
+            <div class="cert-meta"><time>Feb 2025</time><span>Credly</span></div>
+          </li>
+          <li class="cert reveal">
+            <span class="cert-ico"><svg class="ico"><use href="#i-cloud"/></svg></span>
+            <div class="cert-body"><h4>AWS Academy Graduate – Cloud Foundations</h4><p>Amazon Web Services (AWS)</p></div>
+            <div class="cert-meta"><time>Oct 2026</time><span>Credly</span></div>
+          </li>
+          <li class="cert reveal">
+            <span class="cert-ico"><svg class="ico"><use href="#i-award"/></svg></span>
+            <div class="cert-body"><h4>Microsoft 365 Fundamentals (MS-900)</h4><p>Microsoft</p></div>
+            <div class="cert-meta"><time>2025</time></div>
+          </li>
+          <li class="cert reveal">
+            <span class="cert-ico"><svg class="ico"><use href="#i-code"/></svg></span>
+            <div class="cert-body"><h4>Full Stack Web Development</h4><p>Academlo · ID 75965534890967</p></div>
+            <div class="cert-meta"><time>Nov 2022</time></div>
+          </li>
+          <li class="cert reveal">
+            <span class="cert-ico"><svg class="ico"><use href="#i-chart"/></svg></span>
+            <div class="cert-body"><h4>Power BI: tablas dinámicas y macros</h4><p>CENFORPRO</p></div>
+            <div class="cert-meta"><time>2025</time></div>
+          </li>
+          <li class="cert reveal">
+            <span class="cert-ico"><svg class="ico"><use href="#i-code"/></svg></span>
+            <div class="cert-body"><h4>Back-End Node · Aplicaciones Web con React · Foundations HTML, CSS &amp; JS</h4><p>Academlo</p></div>
+            <div class="cert-meta"><time>2022</time></div>
+          </li>
+        </ul>
+
+        <p class="certs-note reveal">
+          <svg class="ico"><use href="#i-file"/></svg>
+          Los respaldos (diplomas y credenciales) están anexados en mi
+          <a href="doc/CV_Nicolas_Munoz_2026.pdf" target="_blank" rel="noopener">CV 2026 en PDF</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="section contact" id="contacto">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <div class="contact-copy">
+            <span class="section-index">06</span>
+            <h2>¿Automatizamos algo juntos?</h2>
+            <p>Cuéntame tu proceso y te propongo una solución con Power Platform, IA o RPA. Respondo por correo o WhatsApp.</p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="mailto:jonimates2000@gmail.com?subject=Consulta%20desde%20tu%20portafolio">
+                <svg class="ico"><use href="#i-mail"/></svg> Escríbeme
+              </a>
+              <a class="btn btn-ghost" href="https://wa.me/593992844325?text=Hola%20Nicol%C3%A1s%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar." target="_blank" rel="noopener">
+                <svg class="ico"><use href="#i-chat"/></svg> WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <ul class="contact-list">
+            <li>
+              <a href="mailto:jonimates2000@gmail.com">
+                <span class="c-ico"><svg class="ico"><use href="#i-mail"/></svg></span>
+                <span><small>Correo</small>jonimates2000@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+593992844325">
+                <span class="c-ico"><svg class="ico"><use href="#i-phone"/></svg></span>
+                <span><small>Teléfono / WhatsApp</small>+593 99 284 4325</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/nicol%C3%A1s-mu%C3%B1oz-pwitec/" target="_blank" rel="noopener">
+                <span class="c-ico"><svg class="ico"><use href="#i-linkedin"/></svg></span>
+                <span><small>LinkedIn</small>nicolás-muñoz-pwitec</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Nicodemus00MG" target="_blank" rel="noopener">
+                <span class="c-ico"><svg class="ico"><use href="#i-github"/></svg></span>
+                <span><small>GitHub</small>Nicodemus00MG</span>
+              </a>
+            </li>
+            <li>
+              <span class="c-static">
+                <span class="c-ico"><svg class="ico"><use href="#i-pin"/></svg></span>
+                <span><small>Ubicación</small>Quito, Ecuador</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Josué Nicolás Muñoz Gualotuña · Soluciones Microsoft e IA</p>
+      <a href="#inicio" class="to-top">Volver arriba <svg class="ico"><use href="#i-arrow"/></svg></a>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de capturas" hidden>
+    <button class="lb-btn lb-close" type="button" aria-label="Cerrar"><svg class="ico"><use href="#i-x"/></svg></button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Anterior"><svg class="ico"><use href="#i-left"/></svg></button>
+    <figure class="lb-figure">
+      <img id="lb-img" src="" alt="">
+      <figcaption id="lb-cap"></figcaption>
+    </figure>
+    <button class="lb-btn lb-next" type="button" aria-label="Siguiente"><svg class="ico"><use href="#i-right"/></svg></button>
+  </div>
+
+  <script src="js/script.js" defer></script>
 </body>
 </html>
